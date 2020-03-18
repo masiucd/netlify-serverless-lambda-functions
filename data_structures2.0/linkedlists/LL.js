@@ -107,3 +107,8 @@ myLL.addFromEnd(22);
 myLL.insert(2, 101);
 myLL.delete(0);
 console.log(myLL.showNodes());
+
+module.exports = {
+  Node,
+  LinkedList,
+};

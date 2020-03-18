@@ -1,6 +1,6 @@
-const L = require('./jsList');
+const L = require('./LL');
 
-const TestList = L.MyLL;
+const TestList = L.LinkedList;
 const TestNode = L.Node;
 
 test('List is a Class', () => {
