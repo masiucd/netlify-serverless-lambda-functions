@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 class Node {
   constructor(data) {
     this.data = data;
@@ -76,7 +77,16 @@ class LinkedListXs {
     return this;
   }
 
-  delete(index) {}
+  delete(index) {
+    let nodeToDelete = this.get(index);
+    console.log(nodeToDelete.prev.next);
+    nodeToDelete.prev.next = nodeToDelete.next;
+    nodeToDelete.next.prev = nodeToDelete.prev;
+    nodeToDelete.prev = null;
+    nodeToDelete.next = null;
+    this.size -= 1;
+    return this;
+  }
 }
 
 const myLL = new LinkedListXs();
@@ -85,4 +95,5 @@ myLL.insertEnd(2);
 myLL.insertStart(100);
 myLL.insertStart(200);
 myLL.insert(1, 777);
+myLL.delete(2);
 console.log(myLL.showList());
