@@ -26,61 +26,15 @@ class MyLinkedList {
     this.size = 0;
   }
 
-  showNodes() {
-    const nodesList = [];
-    let currentNode = this.head;
-    while (currentNode !== null) {
-      nodesList.push(currentNode.data);
-      currentNode = currentNode.next;
-    }
-    return nodesList;
-  }
+  showNodes() {}
 
-  append(data) {
-    const newNode = new Node_(data);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = this.head;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
-    this.size += 1;
-    return this;
-  }
+  append(data) {}
 
-  prepend(data) {
-    const newNode = new Node_(data);
-    if (!this.head.next) {
-      this.append(newNode);
-    }
-    newNode.next = this.head;
-    this.head = newNode;
-    this.size += 1;
-    return this;
-  }
+  prepend(data) {}
 
-  get(index) {
-    if (index > this.size || index < 0) return undefined;
-    let node = this.head;
-    let counter = 0;
-    while (counter !== index) {
-      node = node.next;
-      counter += 1;
-    }
-    return node;
-  }
+  get(index) {}
 
-  insert(data, index) {
-    const newNode = new Node_(data);
-    const prev = this.get(index - 1);
-    console.log(prev);
-    const pointer = prev.next;
-    prev.next = newNode;
-    newNode.next = pointer;
-    this.size += 1;
-    return this;
-  }
+  insert(data, index) {}
 }
 
 const ll = new MyLinkedList();
