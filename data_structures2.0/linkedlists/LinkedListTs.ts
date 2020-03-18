@@ -26,22 +26,87 @@ class MyLinkedList {
     this.size = 0;
   }
 
-  showNodes() {}
+  showNodes() {
+    let current = this.head;
+    const xs = [];
+    while (current !== null) {
+      xs.push(current.data);
+      current = current.next;
+    }
+    return {
+      nodes: xs,
+      amount: this.size,
+    };
+  }
 
-  append(data) {}
+  insertStart(data) {
+    const newNode = new Node_(data);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    }
+    newNode.next = this.head;
+    this.head = newNode;
+    this.size += 1;
+    return this;
+  }
 
-  prepend(data) {}
+  insertEnd(data) {
+    const newNode = new Node_(data);
+    if (!this.head.next) {
+      this.head = newNode;
+      this.tail = this.head;
+    }
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.size += 1;
+    return this;
+  }
 
-  get(index) {}
+  get(index) {
+    let current = this.head;
+    let count = 0;
+    while (index !== count) {
+      count += 1;
+      current = current.next;
+    }
+    return current;
+  }
 
-  insert(data, index) {}
+  insert(index, data) {
+    if (index === 0) return this.insertStart(data);
+    const newNode = new Node_(data);
+    const prevNode = this.get(index - 1);
+    const pointer = prevNode.next;
+    prevNode.next = newNode;
+    newNode.next = pointer;
+    this.size += 1;
+    return this;
+  }
+
+  removeFromStart() {
+    if (!this.head) return null;
+    const current = this.head;
+    this.head = current.next;
+    this.size -= 1;
+    return this;
+  }
+
+  delete(index) {
+    if (index > this.size || index < 0) return null;
+    if (index === 0) return this.removeFromStart();
+    const prevNode = this.get(index - 1);
+    const removed = prevNode.next;
+    prevNode.next = removed.next;
+    this.size -= 1;
+    return this;
+  }
 }
 
 const ll = new MyLinkedList();
-ll.append(6);
-ll.append(3);
-ll.append(99);
-ll.prepend(5);
-ll.prepend(1);
-ll.insert(77, 2);
+ll.insertStart(2);
+ll.insertEnd(6);
+ll.insertEnd(12);
+ll.insert(2, 200);
+ll.delete(1);
 console.log(ll.showNodes());
