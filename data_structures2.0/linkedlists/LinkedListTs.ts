@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 interface INode {
   data?: INode | number | null;
   next?: INode | null;
@@ -101,6 +102,33 @@ class MyLinkedList {
     this.size -= 1;
     return this;
   }
+
+  reverse() {
+    let list = this.showNodes().nodes;
+    list = list
+      .map(String)
+      .reverse()
+      .map(Number);
+    return list;
+  }
+
+  reverse2() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while (second) {
+      let temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
+  }
 }
 
 const ll = new MyLinkedList();
@@ -109,4 +137,6 @@ ll.insertEnd(6);
 ll.insertEnd(12);
 ll.insert(2, 200);
 ll.delete(1);
+ll.reverse();
+ll.reverse2();
 console.log(ll.showNodes());
