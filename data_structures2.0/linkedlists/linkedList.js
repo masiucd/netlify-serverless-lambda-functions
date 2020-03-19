@@ -26,12 +26,13 @@ class ListXS {
     this.size = 0;
   }
 
-  showList() {
+  showNodes() {
     const list = [];
-    let currentNode = this.head;
-    while (currentNode !== null) {
-      list.push(currentNode.data);
-      currentNode = currentNode.next;
+    let current = this.head;
+
+    while (current !== null) {
+      list.push(current.data);
+      current = current.next;
     }
     return list;
   }
@@ -48,6 +49,10 @@ class ListXS {
     return this;
   }
 
+  getSize() {
+    return this.size;
+  }
+
   insertLast(data) {
     const newNode = new Node(data);
     if (!this.head) {
@@ -61,41 +66,71 @@ class ListXS {
     return this;
   }
 
-  get(idx) {
-    let current = this.head;
-    let count = 0;
-    while (idx !== count) {
-      count += 1;
-      current = current.next;
+  get(index) {
+    let node = this.head;
+    let counter = 0;
+    while (index !== counter) {
+      counter += 1;
+      node = node.next;
     }
-    return current;
+    return node;
   }
 
-  insert(idx, data) {
+  removeFromHead() {
+    if (this.size === 0) return undefined;
+    this.head = this.head.next;
+    this.size -= 1;
+    return this;
+  }
+
+  insert(index, data) {
+    if (index > this.size) return undefined;
+    if (index < 0 || index === 0) return this.insertFirst(data);
     const newNode = new Node(data);
-    const prev = this.get(idx - 1);
-    const pointer = prev.next;
-    prev.next = newNode;
+    const prevNode = this.get(index - 1);
+    const pointer = prevNode.next;
+    prevNode.next = newNode;
     newNode.next = pointer;
     this.size += 1;
     return this;
   }
 
-  delete(idx) {
-    const prev = this.get(idx - 1);
-    const removedNode = prev.next;
-    prev.next = removedNode.next;
+  delete(index) {
+    const prevNode = this.get(index - 1);
+    const nodeToDelete = prevNode.next;
+    prevNode.next = nodeToDelete.next;
     this.size -= 1;
     return this;
   }
 
-  reverse() {}
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
+  }
 }
 
 const xs = new ListXS();
-xs.insertFirst(1);
+xs.insertFirst(3);
 xs.insertFirst(2);
-xs.insertLast(3);
-xs.insert(1, 99);
-xs.delete(1);
-console.log(xs.showList());
+xs.insertLast(212);
+xs.insertLast(24);
+xs.insertLast(14);
+xs.insert(1, 100);
+xs.delete(2);
+xs.reverse();
+xs.removeFromHead();
+
+console.log(xs.showNodes());
