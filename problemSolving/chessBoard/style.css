@@ -1,0 +1,38 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.box {
+  box-shadow: 0 0 2px #000;
+  /* margin: 2px; */
+  width: 56px;
+  height: 56px;
+  transition: 2s ease-in-out;
+  cursor: pointer;
+}
