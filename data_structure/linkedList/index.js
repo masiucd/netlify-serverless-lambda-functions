@@ -17,6 +17,8 @@ class LinkedList {
     (this.head = null), (this.tail = null), (this.size = 0);
   }
 
+
+
   /**
    *
    * @param {string} data
@@ -204,6 +206,7 @@ ll.insertAtEnd('keep it real');
 ll.set(0, '!!!');
 ll.insertInto(1, 'masiu');
 ll.insertInto(2, 'Karol');
-console.log(ll);
+// console.log(ll);
 ll.reverse();
-console.log(ll.print);
+// console.log(ll.print);
+console.log(ll.printList());
