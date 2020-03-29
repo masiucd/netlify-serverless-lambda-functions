@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 class Node {
   constructor(data) {
     this.left = null;
@@ -52,7 +53,6 @@ class BinarySearchTree {
     }
     return false;
   }
-  // remove
 }
 
 const tree = new BinarySearchTree();
