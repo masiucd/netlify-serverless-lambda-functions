@@ -8,4 +8,5 @@ const xs = truncateString(
   'A-tisket a-tasket A green and yellow basket',
   'A-tisket a-tasket A green and yellow basket'.length
 );
-console.log(xs);
+
+export { truncateString, x, xs };
