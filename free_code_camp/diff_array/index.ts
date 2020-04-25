@@ -40,10 +40,4 @@ function diffArray3(arr1: any[], arr2: any[]) {
   return xs.filter(item => !arr1.includes(item) || !arr2.includes(item));
 }
 
-const x = diffArray3([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-const x2 = diffArray3(
-  ['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'],
-  ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']
-);
-console.log(x);
-console.log(x2);
+export { diffArray, diffArray3 };
