@@ -6,4 +6,3 @@ function confirmEnding(str: string, target: string) {
 
 const x = confirmEnding('Bastian', 'n'); // true
 const xs = confirmEnding('Congratulation', 'on'); // true
-console.log(xs);

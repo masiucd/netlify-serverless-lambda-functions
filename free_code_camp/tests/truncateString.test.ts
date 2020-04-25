@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { truncateString, x, xs } from '../truncate_str';
 
 describe('truncateString tests', () => {
