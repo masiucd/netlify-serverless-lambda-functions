@@ -8,11 +8,16 @@
   "scripts": {
     "test": "jest"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.5",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "babel-jest": "^24.9.0",
-    "jest": "^24.9.0"
+    "jest": "^26.0.1"
   }
 }
