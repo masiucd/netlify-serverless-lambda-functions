@@ -19,4 +19,4 @@ function quickSort(array: number[]): number[] {
   return [...quickSort(less), pivot, ...quickSort(greater)];
 }
 
-console.log(quickSort(itemsToSort));
+// console.log(quickSort(itemsToSort));
