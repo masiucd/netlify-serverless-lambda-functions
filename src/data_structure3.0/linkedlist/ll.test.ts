@@ -19,6 +19,20 @@ describe('Linked List', () => {
     expect(ll.size).toBe(4);
     ll.pop();
     expect(ll.size).toBe(3);
+    expect(ll.getAt(1)).toEqual({ data: 'B', next: { data: 'C', next: null } });
+    ll.insertAt(2, 'M');
+    expect(ll.size).toBe(4);
+    expect(ll.getAt(2)).toEqual({ data: 'M', next: { data: 'C', next: null } });
+    ll.deleteFromFirst();
+    expect(ll.size).toBe(3);
+    ll.deleteFromFirst();
+    expect(ll.size).toBe(2);
+    ll.push('C');
+    ll.push('D');
+    ll.removeAt(1);
+    expect(ll.size).toBe(3);
+    expect(ll.print()).toEqual('M ---> C ---> D');
   });
 });
+
 
