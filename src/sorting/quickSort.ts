@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-expressions */
-const itemsToSort = [6, 9, 2, 1, 10, 2]
-
 function quickSort(array: number[]): number[] {
   if (array.length < 2) return array
 
