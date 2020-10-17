@@ -3,8 +3,11 @@
 ## Table of Contents
 
 - [About](#about)
+- [Searching](#search)
+- [Sorting](#sort)
+- [Linked lists](#ll)
 
 ## About <a name = "about"></a>
 
 Algorithms, problem solving and data structures, using javascript and typescript.
-Problem solving tasks from [hackerrank](https://www.hackerrank.com/)[leetcode](https://leetcode.com/) and [codesignal](https://codesignal.com/)
+
