@@ -1,4 +1,4 @@
-export const insertionSort = (list: number[]): number[] => {
+export const insertionSort = (list: readonly number[]): number[] => {
   let copyList = list.slice()
   for (let i = 1; i < copyList.length; i++) {
     for (let j = 0; j < i; j++) {
@@ -12,5 +12,3 @@ export const insertionSort = (list: number[]): number[] => {
 }
 
 let arr = [5, 3, 1, 2, 4]
-
-const output = insertionSort(arr)
