@@ -7,7 +7,7 @@ interface ILinkedList<T> {
   // search(comparator: (data: T) => boolean): Node<T> | null
 }
 
-class Node<T> {
+export class Node<T> {
   public data: Node<T> | null
   public next: Node<T> | null
   constructor(data: Node<T>) {
@@ -16,7 +16,7 @@ class Node<T> {
   }
 }
 
-class LinkedList<T> implements ILinkedList<T> {
+export class LinkedList<T> implements ILinkedList<T> {
   head: Node<T> | null
   size: number
   constructor() {
