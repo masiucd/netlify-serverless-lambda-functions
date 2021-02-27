@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@emotion/css": "./@emotion/css.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js"
+  }
+}
