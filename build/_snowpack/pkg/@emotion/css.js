@@ -819,6 +819,7 @@ var classnames = function classnames(args) {
 var _createEmotion = createEmotion({
   key: 'css'
 }),
+    cx = _createEmotion.cx,
     css = _createEmotion.css;
 
-export { css };
+export { css, cx };

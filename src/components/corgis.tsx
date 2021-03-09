@@ -11,6 +11,12 @@ const grid = css`
   justify-items: center;
 `;
 
+const loadCorgis = async () => {
+  const corgis = await fetch("/.netlify/functions/load-corgis");
+  const response = await corgis.json();
+  return response;
+};
+
 export const Corgis = () => {
   return (
     <section className={grid}>
