@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "snowpack dev",
     "build": "snowpack build",
+    "net": "yarn build && netlify dev",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "devDependencies": {
